@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - '17'
-  - '14'
+  - '8'
+  - '6'
 services:
   - mongodb
