@@ -1,0 +1,79 @@
+{
+  "name": "aws-mocks",
+  "version": "0.0.15",
+  "engines": {
+    "node": ">=4"
+  },
+  "description": "Mocks of key AWS services for testing and local development",
+  "main": "index.js",
+  "repository": "cwhenderson20/aws-mocks",
+  "scripts": {
+    "clean": "rimraf dist",
+    "lint": "eslint 'lib/**/*.js' 'test/**/*.js'",
+    "pretest": "npm run lint -s",
+    "test": "nyc npm run test:all -s",
+    "test:all": "npm run test:functional -s && npm run test:unit -s",
+    "test:watch": "parallelshell 'npm run test:functional -s -- --watch' 'npm run test:unit -s -- --watch'",
+    "test:functional": "cross-env NODE_ENV=test ava test/functional --serial",
+    "test:functional:watch": "npm run test:functional -s -- --watch",
+    "test:unit": "cross-env NODE_ENV=test ava test/unit",
+    "test:unit:watch": "npm run test:unit -s -- --watch",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "author": "Chris Henderson <cwhenderson20@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "aws",
+    "amazon",
+    "mock",
+    "sqs",
+    "s3"
+  ],
+  "devDependencies": {
+    "ava": "0.16.0",
+    "coveralls": "2.11.14",
+    "cross-env": "3.1.3",
+    "eslint": "3.8.0",
+    "eslint-config-airbnb": "12.0.0",
+    "eslint-plugin-import": "2.0.1",
+    "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-node": "2.1.3",
+    "eslint-plugin-react": "6.4.1",
+    "kerberos": "0.0.21",
+    "mockery": "2.0.0",
+    "nyc": "8.3.1",
+    "parallelshell": "2.0.0",
+    "pow-mongodb-fixtures": "0.13.0",
+    "rewire": "2.5.2",
+    "rimraf": "2.5.4",
+    "sinon": "1.17.6"
+  },
+  "dependencies": {
+    "@chrishenderson/mongodb-queue": "2.0.3",
+    "async": "2.1.1",
+    "debug": "2.2.0",
+    "moment": "2.19.3",
+    "mongodb": "2.2.10"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.test.js"
+    ],
+    "source": [
+      "lib/**/*.js"
+    ]
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "test",
+      "**/*.test.js",
+      "lib/mocksConfig.js",
+      "node_modules"
+    ]
+  }
+}
