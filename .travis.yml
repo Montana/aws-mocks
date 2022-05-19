@@ -1,4 +1,7 @@
 language: node_js
+env:
+  - AWS_MOCK_CREDENTIALS_EC2
+sudo: required
 node_js:
   - '8'
   - '6'
