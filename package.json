@@ -6,7 +6,7 @@
   },
   "description": "Mocks of key AWS services for testing and local development",
   "main": "index.js",
-  "repository": "cwhenderson20/aws-mocks",
+  "repository": "montana/aws-mocks",
   "scripts": {
     "clean": "rimraf dist",
     "lint": "eslint 'lib/**/*.js' 'test/**/*.js'",
@@ -20,7 +20,7 @@
     "test:unit:watch": "npm run test:unit -s -- --watch",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
-  "author": "Chris Henderson <cwhenderson20@gmail.com>",
+  "author": "Montana <montana@linux.com>",
   "license": "MIT",
   "keywords": [
     "aws",
