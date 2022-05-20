@@ -1,6 +1,8 @@
+[![Build Status](https://app.travis-ci.com/Montana/aws-mocks.svg?branch=master)](https://app.travis-ci.com/Montana/aws-mocks)
+
 # What is `aws-mocks` 
 
-Sometimes you want to run unit tests that require credentials to AWS, you may not have those off hand, or may just want to run without AWS. This allows you to run mock AWS credentials for key AWS functionalities. 
+Sometimes you want to run unit tests that require credentials to AWS, you may not have those off hand, or may just want to run the unit tests in question without AWS. This allows you to run mock credentials for key AWS functionalities. 
 
 ## Usage 
 
