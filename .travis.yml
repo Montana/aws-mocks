@@ -1,9 +1,4 @@
 language: node_js
-addons:
-  apt:
-    packages:
-    - mongodb
-    - docker-ce
 env:
     - EC2_REGION=eu-west-1
     - AWS_S3_BUCKET="mock-montana-build"
@@ -13,4 +8,6 @@ env:
 sudo: required
 node_js:
     - '8'
-    - '6'    
+    - '6'
+services:
+  - mongodb
