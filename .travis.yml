@@ -1,6 +1,6 @@
 language: node_js
 env:
-  - AWS_MOCK_CREDENTIALS_EC2
+  - S3_BUCKET: ecs-refarch-cloudformation
 sudo: required
 node_js:
   - '8'
