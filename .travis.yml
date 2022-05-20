@@ -1,6 +1,7 @@
 language: node_js
 env:
   - S3_BUCKET: ecs-refarch-cloudformation
+  - SERVER_USER=ec2-user SERVER_DNS=ec2-x-x-69-65.eu-west-3.compute.amazonaws.com 
 sudo: required
 node_js:
   - '8'
