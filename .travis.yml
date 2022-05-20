@@ -1,8 +1,14 @@
 language: node_js
 env:
-  - S3_BUCKET: ecs-refarch-cloudformation
-  - SERVER_USER=ec2-user SERVER_DNS=ec2-x-x-69-65.eu-west-3.compute.amazonaws.com 
-sudo: required
+jobs:
+    - TF_VAR_public_ip=<REPLACE ME> TF_VAR_region=<REPLACE ME>
+  global:
+    - EC2_REGION=eu-west-1
+    - AWS_S3_BUCKET="mock-montana-build"
+    - AWS_S3_BUCKET=ecs-refarch-cloudformation
+    - SERVER_USER=ec2-user
+    - SERVER_USER=ec2-user SERVER_DNS=ec2-x-x-69-65.eu-west-3.compute.amazonaws.com 
+  sudo: required
 node_js:
   - '8'
   - '6'
