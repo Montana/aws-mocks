@@ -1,7 +1,5 @@
 language: node_js
 env:
-jobs:
-    - TF_VAR_public_ip=<REPLACE ME> TF_VAR_region=<REPLACE ME>
   global:
     - EC2_REGION=eu-west-1
     - AWS_S3_BUCKET="mock-montana-build"
